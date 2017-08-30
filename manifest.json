@@ -1,0 +1,27 @@
+{
+  "name": "wCustomize Jira",
+  "version": "2.0.0",
+  "manifest_version": 2,
+  "description": "Workiva's Jira customizations",
+  "icons": {
+    "16": "img/icon-16.png",
+    "128": "img/icon-128.png"
+  },
+  
+  "content_scripts": [{
+    "matches": [
+      "https://*/secure/RapidBoard.jspa*",
+      "https://*/jira/secure/RapidBoard.jspa*"
+    ],
+    "js": [ "content-script.js" ],
+    "css": [ "css/custom.css" ],
+    "run_at": "document_end"
+  }],
+  "web_accessible_resources": [
+    "img/*.png",
+    "css/*.css"
+  ],
+  "permissions": [
+    "https://jira.atl.workiva.net/"
+  ]
+}
