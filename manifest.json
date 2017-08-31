@@ -10,8 +10,8 @@
   
   "content_scripts": [{
     "matches": [
-      "https://*/secure/RapidBoard.jspa*",
-      "https://*/jira/secure/RapidBoard.jspa*"
+      "https://jira.atl.workiva.net/secure/RapidBoard.jspa*",
+      "https://jira.atl.workiva.net/jira/secure/RapidBoard.jspa*"
     ],
     "js": [ "content-script.js" ],
     "css": [ "css/custom.css" ],
