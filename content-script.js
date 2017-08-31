@@ -74,10 +74,10 @@ function init() {
     updateTicketsWithPullRequestLinks();
 }
 function waitToInit() {
-    if (document.readyState == 'complete') {
-        init();
+    if (document.readyState == 'complete' && document.body) {
+        setTimeout(init,200);
     } else {
-        setTimeout(waitToInit, 100);
+        setTimeout(waitToInit, 200);
     }
 }
 waitToInit();
