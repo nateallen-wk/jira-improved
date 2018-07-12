@@ -11,7 +11,8 @@
   "content_scripts": [{
     "matches": [
       "https://jira.atl.workiva.net/secure/RapidBoard.jspa*",
-      "https://jira.atl.workiva.net/jira/secure/RapidBoard.jspa*"
+      "https://jira.atl.workiva.net/jira/secure/RapidBoard.jspa*",
+      "https://jira.atl.workiva.net/projects/WAP*"
     ],
     "js": [ "content-script.js" ],
     "css": [ "css/custom.css" ],
