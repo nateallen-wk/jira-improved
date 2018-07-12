@@ -131,10 +131,20 @@ function handleMutation() {
     }, 1000);
 }
 
+function renameWAPlog() {
+    var projectLink = document.querySelector(".project-title a").href;
+    
+    if (projectLink === "https://jira.atl.workiva.net/projects/WAP/summary") {
+        var backlogNavTitle = document.querySelector('.aui-nav-item-label[title=Backlog]');
+        backlogNavTitle.innerText = "WAPlog";
+    }
+}
+
 function init() {
     var mo = new MutationObserver(handleMutation);
     mo.observe(document.body, { attributes: true, childList: true });
     handleMutation();
+    renameWAPlog();
 }
 function waitToInit() {
     if (document.readyState == 'complete' && document.body) {
