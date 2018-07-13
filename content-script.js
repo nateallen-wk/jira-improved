@@ -127,6 +127,7 @@ function handleMutation() {
     _lastMutationTimeout = setTimeout(function () {
         print('handling mutation');
         observeTickets();
+        renameWAPlog();
         _lastMutationTimeout = null;
     }, 1000);
 }
@@ -136,7 +137,10 @@ function renameWAPlog() {
     
     if (projectLink === "https://jira.atl.workiva.net/projects/WAP/summary") {
         var backlogNavTitle = document.querySelector('.aui-nav-item-label[title=Backlog]');
-        backlogNavTitle.innerText = "WAPlog";
+
+        if (backlogNavTitle) {
+            backlogNavTitle.innerText = "WAPlog";
+        }
     }
 }
 
@@ -144,7 +148,6 @@ function init() {
     var mo = new MutationObserver(handleMutation);
     mo.observe(document.body, { attributes: true, childList: true });
     handleMutation();
-    renameWAPlog();
 }
 function waitToInit() {
     if (document.readyState == 'complete' && document.body) {
